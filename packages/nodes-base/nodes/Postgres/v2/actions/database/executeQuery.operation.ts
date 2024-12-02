@@ -14,7 +14,7 @@ import type {
 	QueryWithValues,
 } from '../../helpers/interfaces';
 
-import { replaceEmptyStringsByNulls } from '../../helpers/utils';
+import { isJSON, replaceEmptyStringsByNulls } from '../../helpers/utils';
 
 import { optionsCollection } from '../common.descriptions';
 import { getResolvables, updateDisplayOptions } from '@utils/utilities';
