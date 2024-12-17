@@ -1,5 +1,7 @@
 import type { IDataObject, INode } from 'n8n-workflow';
 import { NodeOperationError } from 'n8n-workflow';
+
+import type { ColumnInfo } from '../../v2/helpers/interfaces';
 import {
 	addSortRules,
 	addReturning,
@@ -13,7 +15,6 @@ import {
 	convertArraysToPostgresFormat,
 	isJSON,
 } from '../../v2/helpers/utils';
-import type { ColumnInfo } from '../../v2/helpers/interfaces';
 
 const node: INode = {
 	id: '1',
