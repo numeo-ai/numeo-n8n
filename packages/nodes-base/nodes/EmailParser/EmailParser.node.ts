@@ -96,7 +96,7 @@ export class EmailParser implements INodeType {
 					{
 						role: 'system',
 						content:
-							'You are a helpful assistant that extracts shipping order details from emails. Always return valid JSON.',
+							'You are a helpful assistant that extracts shipping order details from emails. Always return valid JSON. For orderType field: "spot" means a one-time, single shipment order, while "lane" means recurring or seasonal shipments that will happen multiple times.',
 					},
 					{
 						role: 'user',
@@ -108,11 +108,13 @@ Please extract and return ONLY a JSON object with this exact structure (use null
 {
     "pickup": {
         "date": string | null,
-        "time": string | null
+        "time": string | null,
+		"location": string | null
     },
     "delivery": {
         "date": string | null,
-        "time": string | null
+        "time": string | null,
+		"location": string | null
     },
     "contact": {
         "name": string,
@@ -124,7 +126,7 @@ Please extract and return ONLY a JSON object with this exact structure (use null
         "cargoType": string | null,
         "specialRequirements": string[] | null
     },
-    "recommendedPricePerMile": number
+    "orderType": "spot" | "lane"
 }`,
 					},
 				];
